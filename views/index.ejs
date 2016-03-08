@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  <div class="wrapper">
+  	<div class="head">
+  		<h3 id="title"><%= title %></h3>
+  		<div>Volume:<input type="range" id="volume" min="0" max="100" value="10" name="Volume"></div>
+  		<div id="box"><span type="button" id='column' class='selected'>Column</span><span type="button" id='dot'>Dot</span></div>
+      <div class="control">
+        <span class="pre iconfont" id="pre">&#xe65a;</span>
+        <span class="mid iconfont" id="stopplay" title = "start">&#xe667;</span>
+        <span class="next iconfont" id="next">&#xe887;</span>
+      </div>
+      <div class="playway">
+        <span class="iconfont" title="0" id="way">&#xe6f2;</span>
+      </div>
+      <input type="range" id="process" min="0" max="100" value="0" name="process">
+  	</div>
+	<div class="left">
+		<ul>
+			<% music.forEach(function(name){%>
+				<li title="<%= name %>"><a href="javascript:void(0);"><%= name %></a></li>
+			<%})%>
+		</ul>
+	</div>
+	<div class="right">
+		<canvas id="canvas"></canvas>
+	</div>
+  </div>
+  <script type="text/javascript" src="/javascripts/index.js"></script>
+  </body>
+</html>
