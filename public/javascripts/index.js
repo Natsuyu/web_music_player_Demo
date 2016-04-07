@@ -54,18 +54,19 @@ for(var i=0;i<btn.length;i++)
 	}
 }
 
-
-
 function random(x,y){
 	return Math.round(Math.random()*(y-x)+x);
 }
+
 function genBall(){
 	for(var i=0;i<num;i++)
 	{
 		ballPos[i] = {};
 		ballPos[i].x = Math.random();
 		ballPos[i].y = Math.random();
+		var temp = random(0,2);
 		ballPos[i].color = "rgba("+random(0,255)+","+random(0,255)+","+random(0,255)+","+"0)";
+
 		ballPos[i].capH = 0;
 		ballPos[i].v = Math.random()*0.001;
 	}
@@ -227,7 +228,6 @@ function loadMusic(url){
 			buff = buffer;
 			createBufferSource(0);
 			pro.value = 0;
-
 			duration = 0;tt=0;pre=ac.currentTime;
 			genBall();
 		},function(err){

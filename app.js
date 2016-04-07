@@ -56,7 +56,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(8080,function(){console.log("Running at 8080 port");});
+app.listen(8000,function(){console.log("Running at 8000 port");});
 module.exports = app;
 
 
